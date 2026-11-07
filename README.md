@@ -7,7 +7,7 @@ SK네트웍스 Family AI 캠프 32기 최종 프로젝트 · 6인 팀 · 2026.08
 
 이 저장소는 코드 사본이 아니라, 팀 저장소에 있는 제 작업을 **사례별로 찾아볼 수 있게 정리한 색인**입니다. 아래 표의 링크는 모두 팀 저장소의 실제 커밋, 코드, 평가 보고서로 연결됩니다.
 
-사용 기술: Python · FastAPI · PostgreSQL · MCP Python SDK(FastMCP) · OpenAI API · Ollama · pytest
+사용 기술: Python · FastAPI · PostgreSQL · MCP(FastMCP) · OpenAI API · Ollama · 카카오·구글 장소 API · pytest
 
 ## 무엇을 만들었나
 
@@ -50,7 +50,7 @@ SK네트웍스 Family AI 캠프 32기 최종 프로젝트 · 6인 팀 · 2026.08
 | 같은 이름 다른 지점 | 좌표 차이로 같은 가게를 놓치거나 다른 지점에 잇던 문제 → 지점 표시를 뗀 이름이 같고 150m 안에 하나뿐일 때만 연결 | [커밋](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/commit/75fbd6924b28363ee123e36968b1c48aa97451bc) |
 | 알리지 않던 실패 | 재시도 대상이 아닌 실패를 '운영자 몫'이라 알리지 않았지만 운영자가 없는 구조 → 같은 항목 · 원인 · 코드당 한 번 고객에게 알림 | [커밋](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/commit/3991cf7dec8d732012003b6940c3a6061610cbae) |
 | 팀 DB를 되돌리던 마이그레이션 | 모든 SQL을 한 트랜잭션으로 실행해 요식 파일의 재실행 오류가 Core까지 롤백 → 생성문 · 키 충돌 · 함수 중복 정의 세 곳 수정 → 빈 DB 3회 연속 통과 | [커밋](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/commit/9bbd352ab867f345cc6cdfe68b934398573c2ab5) |
-| 실시간 경로의 모델 | 같은 도구 인터페이스에서 gpt-4o-mini 평균 7.0초, 로컬 Gemma 152초 → 로컬 모델은 실시간 경로에서 제외 | [비교 보고서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/blob/main/final_project_cs/eval/reports/2026-10-13_dining_agent.md) |
+| 실시간 경로의 모델 | 같은 도구 인터페이스에서 gpt-4o-mini 평균 7.0초, 로컬 CPU의 Gemma 152초 → 로컬 모델은 실시간 경로에서 제외 → 이후 기본 모델을 gpt-6-luna로 바꾸며 도구 호출 설정(reasoning_effort)과 구조화 응답(strict json_schema)을 고치고 다시 측정(대체 식당 고르기 12/12), 7턴 실제 접수 시험도 이 모델로 진행 | [비교 보고서](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/blob/main/final_project_cs/eval/reports/2026-10-13_dining_agent.md) · [모델 교체 커밋](https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-6TEAM/commit/536f453939768c41d32199119ec4b8123091a161) |
 
 ## 통합 평가 (2026-10-20)
 
